@@ -18,8 +18,13 @@
             import listPlugin from "@fullcalendar/list";
 
             document.addEventListener('DOMContentLoaded', function () {
+                console.log(@json($events));
                 const calendarEl = document.getElementById('calendar')
                 const calendar = new Calendar(calendarEl, {
+                    eventClick: function(info) {
+                        alert('Event: ' + info.event.title);
+                        alert('View: ' + info.view.type);
+                    },
                     plugins: [dayGridPlugin, timeGridPlugin, listPlugin],
                     headerToolbar: {
                         left: 'prev,next today',

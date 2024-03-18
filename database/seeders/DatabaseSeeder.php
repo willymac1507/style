@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Client;
 use App\Models\Organisation;
 use App\Models\Student;
 use App\Models\User;
@@ -24,6 +25,9 @@ class DatabaseSeeder extends Seeder
 
         Organisation::factory(20)
             ->hasStudents(5)
+            ->create();
+
+        Client::factory(100)
             ->create();
     }
 }
